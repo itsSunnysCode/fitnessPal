@@ -12,7 +12,12 @@ class App extends Component {
     var deficit = 0.05* maintainCalories;
     var dailyCalories = Math.floor(maintainCalories - deficit);
     this.setState({dailyCalories: dailyCalories});
-    
+    var protein = Math.floor((1/8)*dailyCalories);
+    this.setState({protein: protein});
+    var carbohydrate = Math.floor((3/40)*dailyCalories);
+    this.setState({carbohydrate:carbohydrate });
+    var fat = Math.floor((1/45)* dailyCalories);
+    this.setState({fat: fat});
 
   }
   
@@ -20,6 +25,9 @@ class App extends Component {
     super(props);	
     this.state = {
       dailyCalories: 0,
+      protein: 0,
+      carbohydrate: 0,
+      fat: 0
      
     };
     this.calculateBMR = this.calculateBMR.bind(this);
@@ -38,7 +46,11 @@ class App extends Component {
             <input type="submit" value="Submit" />
             </form>
            <h1>your daily Calories are: {this.state.dailyCalories} Calories</h1>
-            
+           <h2>your daily protein requirement is: {this.state.protein} gms</h2>
+           <h2>your daily carbohydrate requirement is: {this.state.carbohydrate} gms</h2>
+           <h2>your daily fat requirement is: {this.state.fat} gms</h2>
+
+
             
       </div>
     )
