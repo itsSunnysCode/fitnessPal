@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 
 class App extends Component {
      
+    //gender selection multiple factor
     gender(event){
       var gender = this.state.gender;
       if(event.target.value==='male'){
          
           gender='male';
           this.setState({gender: gender}, function () {
-            console.log(this.state.gender);
+            
             
           });
       }
@@ -16,11 +17,12 @@ class App extends Component {
         
         gender='female';
         this.setState({gender: gender}, function () {
-          console.log(this.state.gender);
+          
           
         });
       }
     }
+    //calculating bmr, daily calories, daily macros
   calculateBMR(event){
     event.preventDefault();
     var weight = this.refs.weight.value;
@@ -44,17 +46,81 @@ class App extends Component {
     this.setState({fat: fat});
 
   }
-  
+    //preparing customized diet plan 
    dietPlan(){
-    var eachMealProtein = Math.floor(this.state.protein/6);
+      //each meal protein and carbs required
+    var eachMealProtein = Math.floor(this.state.protein/7);
     console.log(eachMealProtein);
     var eachMealCarb = Math.floor(this.state.carbohydrate/3);
     console.log(eachMealCarb);
-    
-    
-    
-    
-   }
+    //breakfast option 1: OATS+BANANA+WHEY+EGG WHITE OMLETTE
+    var oats = Math.floor((eachMealCarb - 23)*(40/27));
+    var oatsProtein = Math.floor((oats*5)/40);    
+    var eggWhites = Math.floor((eachMealProtein-oatsProtein-13)/3.6);
+    console.log(eggWhites);
+    console.log(oats);
+    //breakfast option 2: BROWN BREAD+ BANANA+ WHEY + EGG WHITE OMLETTE
+    var brownBread = Math.floor((eachMealCarb - 23)*(100/46));
+    console.log(brownBread);
+    var brownBreadProtein = Math.floor((brownBread)*(9.7/100));
+    var eggWhitesWithBB = Math.floor((eachMealProtein-brownBreadProtein-13)/3.6);
+    console.log(eggWhitesWithBB);
+    //morning snack : 
+    var whey = Math.floor(eachMealProtein*(30/25));
+    console.log(whey);
+    //lunch : BROWN RICE + BOWL OF SALAD + BOILED CHICKEN
+    var brownRice = Math.floor((eachMealCarb-10)*(100/23));
+    console.log(brownRice);
+    var brownRiceProtein = Math.floor(brownRice * (2.5/100));
+    console.log(brownRiceProtein);
+    var chicken = Math.floor((eachMealProtein-brownRiceProtein)*100/29);
+    console.log(chicken);
+    //evening snack:  whey 
+      console.log(whey);
+    // dinner: CHAPATI +SALAD + LENTILS
+      var chapati = Math.floor((eachMealCarb-20)*(100/55));
+      console.log(chapati);
+      var dinnerProtein = Math.floor((chapati*(9.61/100))+9);
+      console.log(dinnerProtein);
+      
+    //before sleep snack: whey + almonds
+     var wheyNight = Math.floor((eachMealProtein-dinnerProtein)*(30/25));
+     console.log(wheyNight);
+     var notes = `1.After waking up start your day with a cup of Green Tea.
+     2.Take BCAA during workout and ${whey}gms Whey protein post workout.
+     3. Drink 200 ml water before and after, 15 minutes of every meal.`
+     this.setState({notes: notes});
+      var breakfast = `Breakfast has two options:
+      1. Oats(${oats}gms) + Banana(100gms) + Whey protein (15gms) + ${eggWhites} Egg white omlette.
+      2. Brown Bread(${brownBread}gms) + Banana(100gms) + Whey protein (15gms) + ${eggWhitesWithBB} Egg white omlette.`
+      console.log(breakfast);
+      
+      this.setState({breakfast : breakfast});
+
+      var morningSnack = ` For Morning Snack:
+      Whey protein(${whey}gms) + Water accordingly.
+      `
+      this.setState({morningSnack: morningSnack});
+
+       var lunch = ` For Lunch:
+       Cooked Brown Rice(${brownRice}gms) + Boiled/Grilled Chicken (${chicken}gms) + Bowl of broccoli.
+       `
+      this.setState({lunch: lunch});
+
+      var eveningSnack = `For Evening Snack:
+      whey protein(${whey}gms) + Water accordingly.`
+      this.setState({eveningSnack: eveningSnack });
+
+      var dinner = ` For Dinner:
+      Chapati(${chapati}gms) + Lentils (100gms) + bowl of broccoli.
+`
+      this.setState({dinner: dinner});
+      
+      var nightSnack = ` For Meal before bed:
+      Whey protein (${wheyNight}gms) + Water accordingly + 5-10 almonds.
+      `
+      this.setState({nightSnack: nightSnack});
+    }
   constructor(props){
     super(props);	
     this.state = {
@@ -62,14 +128,15 @@ class App extends Component {
       protein: 0,
       carbohydrate: 0,
       fat: 0,
-      gender: ''
-      diet:{
+      gender: '',
+      notes: '',
         breakfast: '',
         morningSnack: '',
         lunch: '',
         eveningSnack: '',
-        dinner: ''
-      }
+        dinner: '',
+        nightSnack:''
+      
     };
     this.calculateBMR = this.calculateBMR.bind(this);
     this.gender = this.gender.bind(this);
@@ -96,7 +163,14 @@ class App extends Component {
            <h2>your daily carbohydrate requirement is: {this.state.carbohydrate} gms</h2>
            <h2>your daily fat requirement is: {this.state.fat} gms</h2>
            <button onClick={this.dietPlan}> prepare my meals</button>
-            {this.z}
+           {this.state.notes}
+           {this.state.breakfast}
+           {this.state.morningSnack}
+           {this.state.lunch}
+           {this.state.eveningSnack}
+           {this.state.dinner}
+           {this.state.nightSnack}
+
             
       </div>
     )
