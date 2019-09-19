@@ -45,6 +45,16 @@ class App extends Component {
 
   }
   
+   dietPlan(){
+    var eachMealProtein = Math.floor(this.state.protein/6);
+    console.log(eachMealProtein);
+    var eachMealCarb = Math.floor(this.state.carbohydrate/3);
+    console.log(eachMealCarb);
+    
+    
+    
+    
+   }
   constructor(props){
     super(props);	
     this.state = {
@@ -53,10 +63,17 @@ class App extends Component {
       carbohydrate: 0,
       fat: 0,
       gender: ''
-     
+      diet:{
+        breakfast: '',
+        morningSnack: '',
+        lunch: '',
+        eveningSnack: '',
+        dinner: ''
+      }
     };
     this.calculateBMR = this.calculateBMR.bind(this);
     this.gender = this.gender.bind(this);
+    this.dietPlan = this.dietPlan.bind(this);
   }
     
 
@@ -64,6 +81,7 @@ class App extends Component {
     
     return (
       <div>
+            <h1>fitness pal</h1>
             <form onSubmit={this.calculateBMR} >
             <input type="float" ref="weight" placeholder="enter you weight in Kg's" />
             <input type="float" ref="height" placeholder="enter you height in cms" />
@@ -77,8 +95,8 @@ class App extends Component {
            <h2>your daily protein requirement is: {this.state.protein} gms</h2>
            <h2>your daily carbohydrate requirement is: {this.state.carbohydrate} gms</h2>
            <h2>your daily fat requirement is: {this.state.fat} gms</h2>
-
-
+           <button onClick={this.dietPlan}> prepare my meals</button>
+            {this.z}
             
       </div>
     )
