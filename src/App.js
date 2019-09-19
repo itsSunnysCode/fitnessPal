@@ -50,42 +50,41 @@ class App extends Component {
    dietPlan(){
       //each meal protein and carbs required
     var eachMealProtein = Math.floor(this.state.protein/7);
-    console.log(eachMealProtein);
+  
     var eachMealCarb = Math.floor(this.state.carbohydrate/3);
-    console.log(eachMealCarb);
+   
     //breakfast option 1: OATS+BANANA+WHEY+EGG WHITE OMLETTE
     var oats = Math.floor((eachMealCarb - 23)*(40/27));
     var oatsProtein = Math.floor((oats*5)/40);    
     var eggWhites = Math.floor((eachMealProtein-oatsProtein-13)/3.6);
-    console.log(eggWhites);
-    console.log(oats);
+    
     //breakfast option 2: BROWN BREAD+ BANANA+ WHEY + EGG WHITE OMLETTE
     var brownBread = Math.floor((eachMealCarb - 23)*(100/46));
-    console.log(brownBread);
+    
     var brownBreadProtein = Math.floor((brownBread)*(9.7/100));
     var eggWhitesWithBB = Math.floor((eachMealProtein-brownBreadProtein-13)/3.6);
-    console.log(eggWhitesWithBB);
+    
     //morning snack : 
     var whey = Math.floor(eachMealProtein*(30/25));
-    console.log(whey);
+    
     //lunch : BROWN RICE + BOWL OF SALAD + BOILED CHICKEN
     var brownRice = Math.floor((eachMealCarb-10)*(100/23));
-    console.log(brownRice);
+  
     var brownRiceProtein = Math.floor(brownRice * (2.5/100));
-    console.log(brownRiceProtein);
+    
     var chicken = Math.floor((eachMealProtein-brownRiceProtein)*100/29);
-    console.log(chicken);
+    
     //evening snack:  whey 
-      console.log(whey);
+     
     // dinner: CHAPATI +SALAD + LENTILS
       var chapati = Math.floor((eachMealCarb-20)*(100/55));
-      console.log(chapati);
+      
       var dinnerProtein = Math.floor((chapati*(9.61/100))+9);
-      console.log(dinnerProtein);
+      
       
     //before sleep snack: whey + almonds
      var wheyNight = Math.floor((eachMealProtein-dinnerProtein)*(30/25));
-     console.log(wheyNight);
+     
      var notes = `1.After waking up start your day with a cup of Green Tea.
      2.Take BCAA during workout and ${whey}gms Whey protein post workout.
      3. Drink 200 ml water before and after, 15 minutes of every meal.`
@@ -93,7 +92,7 @@ class App extends Component {
       var breakfast = `Breakfast has two options:
       1. Oats(${oats}gms) + Banana(100gms) + Whey protein (15gms) + ${eggWhites} Egg white omlette.
       2. Brown Bread(${brownBread}gms) + Banana(100gms) + Whey protein (15gms) + ${eggWhitesWithBB} Egg white omlette.`
-      console.log(breakfast);
+      
       
       this.setState({breakfast : breakfast});
 
