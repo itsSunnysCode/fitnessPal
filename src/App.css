@@ -45,6 +45,8 @@ input[type="float"] {
   width: 40%;
   padding: 15px 22px;
   margin-top: 10px ;
+  margin-left: auto;
+  margin-right: auto;
   box-sizing: border-box;
   border: 4px solid #fbc531;
   border-radius: 5px;    
@@ -56,10 +58,114 @@ input[type="number"] {
   width: 40%;
   padding: 15px 22px;
   margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
   box-sizing: border-box;
   border: 4px solid #fbc531;
   border-radius: 5px;
   
+
+}
+@media screen and (max-width: 320px){
+
+  input[type="float"] {
+  
+    background-color: rgba(233, 229, 229, 0.829);
+    width: 90%;
+    padding: 15px 22px;
+    margin-top: 10px ;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border: 4px solid #fbc531;
+    border-radius: 5px;    
+  }
+  input[type="number"] {
+    
+    background-color: rgba(233, 229, 229, 0.829);
+    
+    width: 90%;
+    padding: 15px 22px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border: 4px solid #fbc531;
+    border-radius: 5px;
+    
+  
+  }
+
+
+
+
+}
+@media screen and (max-width: 375px){
+
+  input[type="float"] {
+  
+    background-color: rgba(233, 229, 229, 0.829);
+    width: 80%;
+    padding: 15px 22px;
+    margin-top: 10px ;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border: 4px solid #fbc531;
+    border-radius: 5px;    
+  }
+  input[type="number"] {
+    
+    background-color: rgba(233, 229, 229, 0.829);
+    
+    width: 80%;
+    padding: 15px 22px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border: 4px solid #fbc531;
+    border-radius: 5px;
+    
+  
+  }
+
+
+
+
+}
+@media screen and (max-width: 441px){
+
+  input[type="float"] {
+  
+    background-color: rgba(233, 229, 229, 0.829);
+    width: 80%;
+    padding: 15px 22px;
+    margin-top: 10px ;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border: 4px solid #fbc531;
+    border-radius: 5px;    
+  }
+  input[type="number"] {
+    
+    background-color: rgba(233, 229, 229, 0.829);
+    
+    width: 80%;
+    padding: 15px 22px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border: 4px solid #fbc531;
+    border-radius: 5px;
+    
+  
+  }
+
+
+
 
 }
 input[type="radio"] {

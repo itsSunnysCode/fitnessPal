@@ -90,10 +90,10 @@ class Measurements extends Component {
             </form>
             </div>
             <div className="container daily">
-           <h2>Your Daily Calories are: {this.state.dailyCalories} Cal</h2>
-           <h2>Your Daily Protein Requirement is: {this.state.protein} gms</h2>
-           <h2>Your Daily Carbohydrate Requirement is: {this.state.carbohydrate} gms</h2>
-           <h2>Your Daily Fat Requirement is: {this.state.fat} gms</h2>
+           <h4>Your Daily Calories are: {this.state.dailyCalories} Cal</h4>
+           <h4>Your Daily Protein Requirement is: {this.state.protein} gms</h4>
+           <h4>Your Daily Carbohydrate Requirement is: {this.state.carbohydrate} gms</h4>
+           <h4>Your Daily Fat Requirement is: {this.state.fat} gms</h4>
            {dietChart}
            </div> 
            </div>
