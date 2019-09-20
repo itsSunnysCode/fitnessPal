@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Mansalva|Roboto+Slab&display=swap');
+.App {
+  text-align: center;
+}
+
 .bg{
     background-image: linear-gradient(
         to top,
@@ -31,23 +35,63 @@ h3{
   color: #fbc531;
   
 }
-input[type=float] {
-  text-align: center;
-  display: block;
+input[type="float"] {
+  
+  background-color: rgba(233, 229, 229, 0.829);
   width: 40%;
   padding: 15px 22px;
-  margin: 10px 5px;
+  margin-top: 10px ;
   box-sizing: border-box;
   border: 4px solid #fbc531;
-    border-radius: 5px;    
+  border-radius: 5px;    
 }
-input[type=number] {
-  text-align: center;
-  display: block;
+input[type="number"] {
+  
+  background-color: rgba(233, 229, 229, 0.829);
+  
   width: 40%;
+  padding: 15px 22px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 4px solid #fbc531;
+  border-radius: 5px;
+  
+
+}
+input[type="radio"] {
+  
+  height: 1.3em;
+  width:1.3em;
   padding: 15px 22px;
   margin: 10px 5px;
   box-sizing: border-box;
   border: 4px solid #fbc531;
-    border-radius: 5px;    
+  border-radius: 5px;    
+}
+input[type="submit"] {
+  
+  
+  
+  padding: 8px 15px;
+  margin: 10px 5px;
+  box-sizing: border-box;
+  border: 4px solid #fbc531;
+  border-radius: 5px;
+  background-color: #fbc531;   
+  font-size:  1.3em;
+}
+form{
+ text-align: center;
+}
+.gender{
+  color:white;
+  font-size: 1.3em;
+}
+.daily{
+  text-align: center;
+  color: whitesmoke;
+  background-color: rgba(51, 49, 41,0.4);
+  border: 2px solid white;
+  padding: 20px 20px;
+  margin: auto;
 }

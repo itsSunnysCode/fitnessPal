@@ -64,23 +64,30 @@ class Measurements extends Component {
     render() {
         return (
             <div className="bg">
-            <h1>Fitness Pal</h1>
-            <h3>Customized fatloss diet plans</h3>
-            <form onSubmit={this.calculateBMR} >
-            <input type="float" ref="weight" placeholder="enter you weight in Kg's" />
-            <input type="float" ref="height" placeholder="enter you height in cms" />
-            <input type="number" min="15" ref="age" placeholder="enter your age" />
-            <input type="radio" name="gender" value="male" onChange={this.gender} />Male
-            <input type="radio" name="gender" value="female" onChange={this.gender} />Female
+            <h1>Fitness Pal</h1>            
+            <h3>Customized Fatloss Diet Plans</h3>
+            <div className="container" >
 
-            <input type="submit" value="Submit" />
+
+            <form id="input" onSubmit={this.calculateBMR} >
+            <input type="float" ref="weight" placeholder="Enter Your Weight in Kg" required/><br />
+            <input type="float" ref="height" placeholder="Enter Your Height in cm" required/><br />
+            <input type="number" min="15" ref="age" placeholder="Enter Your Age" required/><br />
+            <input type="radio" name="gender" value="male" onChange={this.gender} required/><span className="gender">Male</span>
+            <input type="radio" name="gender" value="female" onChange={this.gender} required/><span className="gender">Female</span>
+            <br /> 
+            <input  type="submit" value="Submit" />
             </form>
-           <h2>your daily Calories are: {this.state.dailyCalories} Calories</h2>
-           <h2>your daily protein requirement is: {this.state.protein} gms</h2>
-           <h2>your daily carbohydrate requirement is: {this.state.carbohydrate} gms</h2>
-           <h2>your daily fat requirement is: {this.state.fat} gms</h2>
-           <DietPlan protein={this.state.protein} carbohydrate={this.state.carbohydrate} />
             </div>
+            <div className="container daily">
+           <h2>Your Daily Calories are: {this.state.dailyCalories} Calories</h2>
+           <h2>Your Daily Protein Requirement is: {this.state.protein} gms</h2>
+           <h2>Your Daily Carbohydrate Requirement is: {this.state.carbohydrate} gms</h2>
+           <h2>Your Daily Fat Requirement is: {this.state.fat} gms</h2>
+           </div> 
+           <DietPlan protein={this.state.protein} carbohydrate={this.state.carbohydrate} />
+           
+           </div>
         )
     }
 }
