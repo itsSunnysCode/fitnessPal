@@ -1,8 +1,10 @@
+/*importing fonts*/
 @import url('https://fonts.googleapis.com/css?family=Mansalva|Roboto+Slab&display=swap');
 .App {
   text-align: center;
 }
 
+/*background*/
 .bg{
     background-image: linear-gradient(
         to top,
@@ -35,6 +37,7 @@ h3{
   color: #fbc531;
   
 }
+/*css for inputs*/
 input[type="float"] {
   
   background-color: rgba(233, 229, 229, 0.829);
@@ -87,6 +90,7 @@ form{
   color:white;
   font-size: 1.3em;
 }
+/*daily macros css added*/
 .daily{
   text-align: center;
   color: whitesmoke;
