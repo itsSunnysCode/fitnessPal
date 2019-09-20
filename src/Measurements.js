@@ -26,6 +26,9 @@ class Measurements extends Component {
       //calculating bmr, daily calories, daily macros
     calculateBMR(event){
       event.preventDefault();
+      //changing state of diet
+      
+      this.setState({diet:true});
       var weight = this.refs.weight.value;
       var height = this.refs.height.value;
       var age = this.refs.age.value;
@@ -54,7 +57,8 @@ class Measurements extends Component {
           protein: 0,
           carbohydrate: 0,
           fat: 0,
-          gender: ''
+          gender: '',
+          diet:false
           
         };
         this.calculateBMR = this.calculateBMR.bind(this);
@@ -62,6 +66,12 @@ class Measurements extends Component {
         //this.dietPlan = this.dietPlan.bind(this);
       }
     render() {
+      var dietChart;
+       if(this.state.diet===false)
+       {dietChart = '';}
+       else if(this.state.diet===true)
+       {dietChart = <DietPlan protein={this.state.protein} carbohydrate={this.state.carbohydrate} />;  }
+       
         return (
             <div className="bg">
             <h1>Fitness Pal</h1>            
@@ -80,13 +90,12 @@ class Measurements extends Component {
             </form>
             </div>
             <div className="container daily">
-           <h2>Your Daily Calories are: {this.state.dailyCalories} Calories</h2>
+           <h2>Your Daily Calories are: {this.state.dailyCalories} Cal</h2>
            <h2>Your Daily Protein Requirement is: {this.state.protein} gms</h2>
            <h2>Your Daily Carbohydrate Requirement is: {this.state.carbohydrate} gms</h2>
            <h2>Your Daily Fat Requirement is: {this.state.fat} gms</h2>
+           {dietChart}
            </div> 
-           <DietPlan protein={this.state.protein} carbohydrate={this.state.carbohydrate} />
-           
            </div>
         )
     }
