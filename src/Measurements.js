@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import DietPlan from './DietPlan'
+import './App.css'
+
 class Measurements extends Component {
     //gender selection multiple factor
     gender(event){
@@ -61,7 +63,9 @@ class Measurements extends Component {
       }
     render() {
         return (
-            <div>
+            <div className="bg">
+            <h1>Fitness Pal</h1>
+            <h3>Customized fatloss diet plans</h3>
             <form onSubmit={this.calculateBMR} >
             <input type="float" ref="weight" placeholder="enter you weight in Kg's" />
             <input type="float" ref="height" placeholder="enter you height in cms" />
@@ -71,7 +75,7 @@ class Measurements extends Component {
 
             <input type="submit" value="Submit" />
             </form>
-           <h1>your daily Calories are: {this.state.dailyCalories} Calories</h1>
+           <h2>your daily Calories are: {this.state.dailyCalories} Calories</h2>
            <h2>your daily protein requirement is: {this.state.protein} gms</h2>
            <h2>your daily carbohydrate requirement is: {this.state.carbohydrate} gms</h2>
            <h2>your daily fat requirement is: {this.state.fat} gms</h2>
