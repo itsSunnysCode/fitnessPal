@@ -73,7 +73,8 @@ class Measurements extends Component {
        {dietChart = <DietPlan protein={this.state.protein} carbohydrate={this.state.carbohydrate} />;  }
        
         return (
-            <div className="bg">
+            <div >
+            <div className="bg"></div>
             <h1>Fitness Pal</h1>            
             <h3>Customized Fatloss Diet Plans</h3>
             <div className="container" >
