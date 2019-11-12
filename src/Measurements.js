@@ -82,7 +82,7 @@ class Measurements extends Component {
 
             <form id="input" onSubmit={this.calculateBMR} >
             <input type="float" ref="weight" placeholder="Enter Your Weight in Kg" required/><br />
-            <input type="float" ref="height" placeholder="Enter Your Height in cm" required/><br />
+            <input type="number" step=".01" ref="height" placeholder="Enter Your Height in cm" required/><br />
             <input type="number" min="15" ref="age" placeholder="Enter Your Age" required/><br />
             <input type="radio" name="gender" value="male" onChange={this.gender} required/><span className="gender">Male</span>
             <input type="radio" name="gender" value="female" onChange={this.gender} required/><span className="gender">Female</span>
